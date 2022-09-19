@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        text-align: center;
+    }
+    table{
+        text-align: center;
+        width:500px;
+        margin-left: 400px;
+        margin-top: 50px;
+    }
+    table,tr,th,td{
+        border: 1px solid;
+       border-collapse: collapse;
+    }
+    tr,th,td{
+        padding: 10px;
+    }
+</style>
+<body>
+    <h1>price check project</h1>
+    <table>
+        <tr>
+            <th>Roll.no</th>
+            <th>protect</th>
+            <th>price</th>
+            <th>quantity</th>
+            <th>total</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>redmi</td>
+            <td id="price">15000</td>
+            <td>
+                <select onchange="select()" name="" id="quantity">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </td>
+            <td id="total"></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>laptop</td>
+            <td id="price1">30000</td>
+            <td>
+                <select onchange="select1()" name="" id="quantity1">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </td>
+            <td id="total1"></td>
+        </tr>
+        <td>3</td>
+            <td>tv</td>
+            <td id="price2">50000</td>
+            <td>
+                <select onchange="select2()" name="" id="quantity2">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </td>
+            <td id="total2"></td>
+        </tr>
+        <tr>
+            <td>tax</td>
+            <td></td>
+            <td></td>
+            <td id="percentage">10%</td>
+            <td id="tax"></td>
+        </tr>
+
+        <tr>
+            <td onclick="overallprice()" >total price</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td id="overall"></td>
+        </tr>
+
+
+
+    </table>
+    <script>
+
+
+            let a=0;
+            let a1=0;
+            let a2=0;
+            
+          let overall=document.getElementById("overall");
+
+//          let add=price.innerText*quantity.value;
+
+        function select(){
+          
+           let price =document.getElementById("price");
+           let total=document.getElementById("total");
+           let quantity=document.getElementById("quantity");
+        //   let value=quantity.value;
+       
+       // let prices=price.innerText;
+        //let quanties=quantity.value;
+
+        let add= price.innerText*quantity.value;
+
+           console.log(add)
+            total.innerText=add;
+
+
+
+         a=parseInt(total.innerText);
+
+         console.log(typeof(a))
+
+        sakthi();
+      
+
+
+        }
+        
+        function select1(){
+          
+          let price1 =document.getElementById("price1");
+          let total1=document.getElementById("total1");
+          let quantity1=document.getElementById("quantity1");
+       //   let value=quantity.value;
+
+       let prices1=price1.innerText;
+        let quanties1=quantity1.value;
+
+        let add1= prices1*quanties1;
+
+
+
+          console.log(add1)
+           total1.innerText=add1;
+
+      
+
+            a1=parseInt(total1.innerText);
+
+            console.log(a1)
+
+            sakthi();
+         
+
+
+       }
+
+       function select2(){
+          
+          let price2 =document.getElementById("price2");
+          let total2=document.getElementById("total2");
+          let quantity2=document.getElementById("quantity2");
+       //   let value=quantity.value;
+          
+       let prices2=price2.innerText;
+        let quanties2=quantity2.value;
+
+        let add2= prices2*quanties2;
+
+        total2.innerText=add2;
+
+             a2=parseInt(total2.innerText);
+
+             console.log(typeof(a2))
+             sakthi();
+
+
+       }
+       
+   
+       function sakthi(){
+
+        let num=(a+a1+a2);
+        console.log(typeof(num));
+
+        
+
+
+        let tax=document.getElementById("tax");
+         tax1=num*10/100;
+         console.log(typeof(tax1));
+       tax.innerText=tax1;
+       let max=parseInt(tax.innerText)
+        console.log(typeof(max));
+        let over=parseInt(max+num);
+        overall.innerText=over;
+
+       }
+
+       
+    //    <td>tax</td>
+    //         <td></td>
+    //         <td></td>
+    //         <td id="percentage">10%</td>
+    //         <td onchange="complete()" id="tax"></td>
+
+       function complete(){
+
+        let percentage=document.getElementById("perentage");
+        
+
+        
+       }
+
+    </script>
+</body>
+</html>
